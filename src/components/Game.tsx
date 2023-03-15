@@ -7,7 +7,9 @@ import { Alert, Space } from "antd";
 
 import { Button, notification } from "antd";
 
-const socket = io(process.env.REACT_APP_SOCKET_URL ? process.env.REACT_APP_SOCKET_URL: "");
+const socket = io(
+  process.env.REACT_APP_SOCKET_URL ? process.env.REACT_APP_SOCKET_URL : ""
+);
 
 socket.on("connection-message", (data) => {
   console.log(data);
@@ -56,7 +58,7 @@ const Game = () => {
   const [gameOn, setGameOn] = useState(false);
 
   const startNewGame = () => {
-    console.log(baseURL)
+    console.log(baseURL);
     if (playerName == null) {
       alert("Please Enter Player Name");
     } else {
@@ -101,6 +103,13 @@ const Game = () => {
     setChat(newChat);
     setMsg("");
   };
+
+  useEffect(() => {
+    console.log("Base URL");
+    console.log(process.env.REACT_APP_BASE_URL);
+    console.log("Socket URL");
+    console.log(process.env.REACT_APP_SOCKET_URL);
+  }, []);
 
   useEffect(() => {
     if (recievedMsg) {
