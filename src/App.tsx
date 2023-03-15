@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from "react";
+import "./App.css";
+import Game from "./components/Game";
+import { Divider } from "antd";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="info">
+        <div className="title">Tic Tac Toe</div>
+        <div className="subtitle">
+          No SIGN IN required. Scalable Tic Tac Toe Web application
+          <div className="how-to">How to Play?</div>
+          <div className="list-item">
+            - Enter player name and board size
+          </div>
+          <div className="list-item">
+            - Create a game, Copy the generated Game ID and share with your
+            friend!
+          </div>
+          <div className="list-item">
+            - Chat and Play with your friends in real time.
+          </div>
+        </div>
+      </div>
+      {/* <Divider type="vertical" style={{backgroundColor:"white"}} /> */}
+      <Game />
     </div>
   );
 }
