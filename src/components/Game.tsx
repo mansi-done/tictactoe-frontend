@@ -56,6 +56,7 @@ const Game = () => {
   const [playerName, setPlayerName] = useState<string | null>(null);
   const [size, setSize] = useState(3);
   const [gameOn, setGameOn] = useState(false);
+  const [boxSize, setBoxSize] = useState((60 / size).toString() + "vh");
 
   const startNewGame = () => {
     console.log(baseURL);
@@ -247,6 +248,10 @@ const Game = () => {
                           key={Math.random()}
                           style={{
                             // cursor:"pointer",
+                            height: boxSize,
+                            width: boxSize,
+                            minHeight: "5vh",
+                            minWidth: "5vh",
                             cursor: !offline
                               ? myTurn
                                 ? "pointer"
@@ -281,7 +286,10 @@ const Game = () => {
                 Enter TicTacToe Size: &nbsp;
                 <input
                   value={size}
-                  onChange={(e) => setSize(Number(e.target.value))}
+                  onChange={(e) => {
+                    setSize(Number(e.target.value));
+                    setBoxSize((60 / Number(e.target.value)).toString() + "vh");
+                  }}
                 ></input>
               </div>
 

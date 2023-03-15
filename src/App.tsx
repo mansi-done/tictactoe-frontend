@@ -22,6 +22,9 @@ function App() {
             - Chat and Play with your friends in real time.
           </div>
         </div>
+        <div className="enddetails">
+          created by <a href="https://mansisaini.online/" target="_blank" style={{textDecoration:"none",color:"lightblue"}}>Mansi Saini</a>
+        </div>
       </div>
       {/* <Divider type="vertical" style={{backgroundColor:"white"}} /> */}
       <Game />

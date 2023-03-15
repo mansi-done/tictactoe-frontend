@@ -61,8 +61,6 @@
 }
 .box {
   display: flex;
-  height: 20vh;
-  width: 20vh;
   justify-content: center;
   align-items: center;
   border: 1px solid white;
@@ -137,4 +135,17 @@
 .how-to{
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+.messages{
+  overflow-y: scroll;
+  padding-block-start: 3rem;
+  padding: 1rem;
+}
+
+.enddetails{
+  position: fixed;
+  bottom: 0;
+  left: 0.1;
+
 }
