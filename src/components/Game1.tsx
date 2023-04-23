@@ -5,7 +5,7 @@ import qs from "qs";
 import io from "socket.io-client";
 import { Alert, Space } from "antd";
 
-import { Button, Input, Divider } from "antd";
+import { Button, notification } from "antd";
 
 const socket = io(
   process.env.REACT_APP_SOCKET_URL ? process.env.REACT_APP_SOCKET_URL : ""
@@ -189,6 +189,7 @@ const Game = () => {
       if (offline) {
         setOffline(false);
       }
+      
     }
   };
 
@@ -207,25 +208,21 @@ const Game = () => {
       <div className="game">
         <div className="nav">
           <div className="input">
-            <div className="label">Enter Game id</div>
-            <div className="in">
-              <Input
-                // size="large"
-                value={inputVal}
-                onChange={(e) => {
-                  setInputVal(e.target.value);
-                }}
-                className="input-style"
-              />
-              <Button
-                type={"primary"}
-                onClick={generateGame}
-                className="genbtn"
-                style={{ color: "#eac6ff", backgroundColor: "#7400B8" }}
-              >
-                Enter Game
-              </Button>
-            </div>
+            Enter Game ID{" "}
+            <input
+              value={inputVal}
+              onChange={(e) => {
+                setInputVal(e.target.value);
+              }}
+              style={{ height: "1.5rem", fontSize: "1rem" }}
+            />{" "}
+            <Button
+              ghost
+              onClick={generateGame}
+              style={{ borderColor: "white", color: "white" }}
+            >
+              Generate Game
+            </Button>
           </div>
         </div>
 
@@ -270,50 +267,38 @@ const Game = () => {
             </div>
           ) : (
             <div className="settings">
-              <div className="top">
-                <div className="pn">
-                  <div className="label">Player Name</div>
-                  <div className="playername">
-                    <Input
-                      value={playerName != null ? playerName : ""}
-                      onChange={(e) => setPlayerName(e.target.value)}
-                      className="input-style"
-                      style={{ borderRadius: "0.45rem", width: "13rem" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="pn">
-                  <div className="label">Board Size </div>
-                  <div className="size">
-                    <Input
-                      value={size}
-                      onChange={(e) => {
-                        setSize(Number(e.target.value));
-                        setBoxSize(
-                          (60 / Number(e.target.value)).toString() + "vh"
-                        );
-                      }}
-                      className="input-style"
-                      style={{ borderRadius: "0.45rem", width: "7rem" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="start-btn">
-                  <Button
-                    type="primary"
-                    onClick={startNewGame}
-                    className="genbtn"
-                    style={{ borderRadius: "0.45rem" }}
-                  >
-                    Generate Game
-                  </Button>
-                </div>
+              <div className="playername">
+                Enter Player Name: &nbsp;&nbsp;
+                <input
+                  value={playerName != null ? playerName : ""}
+                  onChange={(e) => setPlayerName(e.target.value)}
+                ></input>
               </div>
-              <div className="offline" style={{ fontSize: "0.7rem" }}>
+
+              <div className="size">
+                Enter TicTacToe Size: &nbsp;
+                <input
+                  value={size}
+                  onChange={(e) => {
+                    setSize(Number(e.target.value));
+                    setBoxSize((60 / Number(e.target.value)).toString() + "vh");
+                  }}
+                ></input>
+              </div>
+
+              <div className="offline">
                 <input type="radio" onClick={() => setOffline(true)}></input>{" "}
-                Play Offline
+                Select to play offline!
+              </div>
+
+              <div className="start-btn">
+                <Button
+                  ghost
+                  onClick={startNewGame}
+                  style={{ borderColor: "white", color: "white" }}
+                >
+                  Start Game
+                </Button>
               </div>
             </div>
           )}

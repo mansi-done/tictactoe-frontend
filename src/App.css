@@ -1,25 +1,110 @@
 .container {
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
+  flex-direction: column;
+  width: 100vw;
   height: 100vh;
-  /* width: 100vw; */
+  align-items: center;
+  gap:1rem;
+
+}
+.logo{
+  height: 12vh;
+}
+.game-info{
+  width: 100%;
 }
 
+.infor{
+  color:#eac6ff;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+
+}
+
+.howto{
+  border-radius: 0.5rem;
+  border: 1.5px dashed #eac6ff;
+  color: #eac6ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+  padding: 1.5rem;
+}
+
+.genbtn{
+
+  border-top-right-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem;
+
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  height: 3rem;
+  background-color: #7400B8;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.pn{
+  display: flex;
+  flex-direction: column;
+}
+
+.in{
+  display: flex;
+}
+
+.label{
+  font-size: 0.6rem;
+  background-color: #7400B8;
+  width: fit-content;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  margin-bottom: -0.6rem;
+  margin-left: 1rem;
+  z-index: 2;
+}
+
+.heading{
+  font-size: 1rem;
+}
+
+.input-style{
+  height: 3rem;
+  font-size: 1rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  border-top-left-radius: 0.45rem;
+  border-bottom-left-radius: 0.45rem;
+  width: 20rem;
+  outline: none;
+  z-index: 1;
+}
 .home {
   display: flex;
   padding: 2rem;
   justify-content: center;
-  /* align-items: center; */
-  height: 100vh;
   gap: 4rem;
   width: 85%;
+
 }
 
 .game {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* gap: 2rem; */
   /* background-color: aqua; */
   /* justify-content: center; */
   /* border: 1px solid red; */
@@ -47,7 +132,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 70vh;
+  /* height: 70vh; */
+  min-height:20vh;
+  height:fit-content;
   /* background-color: aliceblue; */
   align-items: center;
 }
@@ -74,7 +161,14 @@
 .settings {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap:0.2rem;
+}
+
+.top{
+  display: flex;
+  gap:1rem;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .start-btn {
@@ -148,5 +242,8 @@
 .enddetails {
   position: fixed;
   bottom: 0;
-  left: 0.1;
+  left: 0;
+  background-color: #7400B8;
+  padding: 0.2rem;
 }
+
