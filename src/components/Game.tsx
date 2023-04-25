@@ -328,7 +328,7 @@ const Game = () => {
                 }}
                 style={{ borderColor: "white", color: "white" }}
               >
-                New game
+                New Game
               </Button>
             </div>
           )}
