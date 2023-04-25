@@ -243,7 +243,13 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: #7400B8;
+  background-color: #7500b88a;
   padding: 0.2rem;
+  width: 100%;
+  font-size:0.8rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  padding-inline:2rem;
 }
 

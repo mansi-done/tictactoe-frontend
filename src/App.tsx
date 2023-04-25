@@ -35,14 +35,29 @@ function App() {
       </div>
 
       <div className="enddetails">
-        created by{" "}
-        <a
-          href="https://mansisaini.online/"
-          target="_blank"
-          style={{ textDecoration: "none", color: "lightblue" }}
-        >
-          Mansi Saini
-        </a>
+        <div>
+          This site was developed by{" "}
+          <a
+            href="https://mansisaini.online/"
+            target="_blank"
+            style={{ textDecoration: "none", color: "lightblue" }}
+          >
+            Mansi Saini
+          </a>
+          &nbsp; | &nbsp; Copyright © 2023
+          &nbsp; | &nbsp; All Rights Reserved
+           
+        </div>
+        <div>
+          Designed by {" "}
+          <a
+            href="https://raashid.in/"
+            target="_blank"
+            style={{ textDecoration: "none", color: "lightblue" }}
+          >
+           raashid
+          </a>
+        </div>
       </div>
     </div>
   );
